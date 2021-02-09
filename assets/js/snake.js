@@ -43,8 +43,6 @@ banner = `
 <span style="color: red">e</span>
 `
 
-var casillero = document.getElementById('#normalBanner')
-
 
 var melodia = document.createElement("audio");
 melodia.src = "./sonidos/dubmood-monkey-island-8-bit-music.mp3";
@@ -176,7 +174,7 @@ function updateLoop() {
 
     } else if (score > 28) {
 
-        casillero.innerHTML = banner
+        document.getElementById('normalBanner').innerHTML = banner
                    
         if(snake[0][0] == apple[0] && snake[0][1] == apple[1]) {
             if(score / 32 == 1) {
