@@ -21,14 +21,37 @@ apple5 = []
 apple6 = []
 apple7 = []
 apple8 = []
-score = 0
+score = 27
 
+banner = `
+<span style="color: red">T</span>
+<span style="color: orange">h</span>
+<span style="color: yellow">e</span>&nbsp;
+
+<span style="color: limegreen">R</span>
+<span style="color: blue">a</span>
+<span style="color: purple">i</span>
+<span style="color: cyan">n</span>
+<span style="color: red">b</span>
+<span style="color: orange">o</span>
+<span style="color: yellow">w</span>&nbsp;
+
+<span style="color: limegreen">S</span>
+<span style="color: blue">n</span>
+<span style="color: purple">a</span>
+<span style="color: pink">k</span>
+<span style="color: red">e</span>
+`
+
+var casillero = document.getElementById('#normalBanner')
 
 
 var melodia = document.createElement("audio");
 melodia.src = "./sonidos/dubmood-monkey-island-8-bit-music.mp3";
 
 playSonido(melodia);
+
+
 
 document.body.onkeydown = function(e) {
 
@@ -152,6 +175,8 @@ function updateLoop() {
         draw()
 
     } else if (score > 28) {
+
+        casillero.innerHTML = banner
                    
         if(snake[0][0] == apple[0] && snake[0][1] == apple[1]) {
             if(score / 32 == 1) {
