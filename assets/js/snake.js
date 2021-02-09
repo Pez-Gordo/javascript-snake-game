@@ -1,25 +1,8 @@
 
-canvas = document.body.children[0]
-context = canvas.getContext("2d")
+var canvas = document.body.children[0]
+var context = canvas.getContext("2d")
 
 context.scale(10, 10)
-
-document.body.onkeydown = function(e) {
-    if (e.which == 38) {  
-        direction = [0, -1]
-    }
-    else if(e.which == 40) { //down
-        direction = [0, 1]
-    }
-    else if (e.which == 39) {
-        direction = [1, 0]
-    }
-    else if(e.which == 37) { 
-        direction = [-1, 0]
-    }
-    
-    } 
-
 
 snake = [
     [0, 1],
@@ -37,6 +20,35 @@ apple4 = []
 score = 0
 var melodia = document.createElement("audio");
 melodia.src = "./sonidos/dubmood-monkey-island-8-bit-music.mp3";
+
+
+document.body.onkeydown = function(e) {
+
+    if (e.which == 38) {        //up
+        if (direction[1] !== 1) {
+            direction = [0, -1]
+        }
+    }
+    else if(e.which == 40) {    //down
+        if (direction[1] !== -1) {
+            direction = [0, 1]
+        }
+    }
+    else if (e.which == 39) {   //right
+        if (direction[0] !== -1) {
+            direction = [1, 0]
+        }
+    }
+    else if(e.which == 37) {    //left
+        if (direction[0] !== 1) {
+            direction = [-1, 0]
+        }
+    }
+    
+} 
+
+
+
 
 function updateLoop() {
     
