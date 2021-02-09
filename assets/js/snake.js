@@ -21,7 +21,7 @@ apple5 = []
 apple6 = []
 apple7 = []
 apple8 = []
-score = 27
+score = 0
 
 banner = `
 <span style="color: red">T</span>
@@ -87,7 +87,7 @@ function updateLoop() {
     ])
         
     if (score < 29) {
-                
+              
         if(snake[0][0] == apple[0] && snake[0][1] == apple[1]) {
             if(score / 5 == 1) {
                 apple2 = [ 
@@ -175,6 +175,7 @@ function updateLoop() {
     } else if (score > 28) {
 
         document.getElementById('normalBanner').innerHTML = banner
+        document.getElementById("normalBanner").className = "parpadea"; //al utilizar += para añadir otra clase hay que tener en cuenta el espacio en blanco
                    
         if(snake[0][0] == apple[0] && snake[0][1] == apple[1]) {
             if(score / 32 == 1) {
@@ -493,5 +494,6 @@ function playSonido(s) {
 }
 
 setInterval(updateLoop, 75)
+
 
 
