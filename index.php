@@ -30,6 +30,10 @@ include_once './assets/php/consultar.php'
             <input type="number" name="score" id="score" disabled>
 		    <p></p>
 		    <button id="btnguardar">Send</button>
+            <br><br><br><br>
+
+            <!-- Con este botón hay que implementar una consulta asíncrona para no interferir en la operación de escritura-->
+            <button id="verRanking">Ranking</button> 
         </form>
 
     </div>
