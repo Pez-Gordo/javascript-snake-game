@@ -1,5 +1,5 @@
 
-var canvas = document.body.children[0]
+var canvas = document.getElementById('boardCanvas')
 var context = canvas.getContext("2d")
 
 context.scale(10, 10)
@@ -168,6 +168,14 @@ function updateLoop() {
             if (snake[i][0] == snake[0][0] && snake[i][1] == snake[0][1]) {
                 snake = ( [0, 1] )
                 console.log("Game Over !")
+                document.getElementById('floatingDiv').style.display = 'block'
+
+                var inputScore = document.getElementById('score')
+                inputScore.value = score
+
+                
+                enviarDatos()
+                
             }
         }
         draw()
@@ -451,6 +459,12 @@ function updateLoop() {
             if (snake[i][0] == snake[0][0] && snake[i][1] == snake[0][1]) {
                 snake = ( [0, 1] )
                 console.log("Game Over !")
+                document.getElementById('floatingDiv').style.display = 'block'
+                var inputScore = document.getElementById('score')
+                inputScore.value = score
+
+                enviarDatos()
+                
             }
         }
         
@@ -458,6 +472,29 @@ function updateLoop() {
     }
 
     
+}
+
+function enviarDatos() {
+    $(document).ready(function(){
+		$('#btnguardar').click(function(){
+			var datos=$('#floatingForm').serialize();
+            //console.log(datos)
+			$.ajax({
+				type: "POST",
+				url: "./assets/php/insertar.php",
+				data: datos,
+				success: function(r){
+                    alert("Added registry to database")
+					console.log(r)
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+            		console.log(textStatus, errorThrown);
+        		},
+			});
+
+			return false;
+		});
+	});
 }
 
 function draw() {

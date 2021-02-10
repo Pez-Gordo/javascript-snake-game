@@ -2,10 +2,20 @@ body {
   background-color: darkgrey;
 }
 
-#boardcanvas {
+#boardCanvas {
   /*position: relative;*/
+  
   border: solid 5px green;
   background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+}
+
+#floatingDiv {
+  float: left;
+  display: none;
 }
 
 h1 {
@@ -25,19 +35,30 @@ h1 {
   color: red;
 }
 
+#infoContainer {
+  max-width: 500;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
 
+#normalBanner {
+  text-align: center;
+}
 
 #scoreboard {
   font-size: 25;  
-  padding-left: 150px;
+  /*padding-left: 150px;*/
+  text-align: center;
   
 }
 
 #scoreboardPara {
     font-size: 40;
     color: blue;
-    padding-left: 100px;
-    
+    /*padding-left: 100px;*/
+    text-align: center;
     
 }
 
