@@ -19,6 +19,34 @@ echo "Connection successful! " . PHP_EOL;
 echo "Info host: " . mysqli_get_host_info($conn) . PHP_EOL;
 
 
+       
+        
+$sql="SELECT * FROM snake ORDER BY score DESC;";
 
-	mysqli_close($conn);
+$result=mysqli_query($conn, $sql);
+
+$resultCheck=mysqli_num_rows($result);
+
+echo "Result ----> " . $result;
+
+if ($resultCheck > 0) {    
+    echo "<table border='1'>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr><td>" . $row['usuario'] . "</td><td>" . $row['score'] . "</td><td>" . $row['say'] . "</td></tr>";
+    }
+    echo "</table>";
+} 
+
+mysqli_close($conn);
+
 ?>
+
+<!Doctype html>
+<html>
+    <body>
+<br><br>
+
+
+<a href="../../index.html">Play again</a> 
+</body>
+</html>
