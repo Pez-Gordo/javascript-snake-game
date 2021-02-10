@@ -500,6 +500,12 @@ function enviarDatos() {
 	});
 }
 
+
+$('#btnconsulta').click(function(){
+    window.open("./assets/php/consultar.php" , "_blank", "width=500,height=300,scrollbars=YES")
+    return false;
+})
+   
 function draw() {
     context.clearRect(0, 0, 500, 500)
     context.fillStyle = "lightgreen"
