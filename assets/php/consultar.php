@@ -6,7 +6,7 @@ $password = "my*8-9+6POiusql";
 $database = "ranking";
 $conn = mysqli_connect($host, $username, $password, $database);
 
-$query = "SELECT * FROM snake ORDER BY score";
+$query = "SELECT * FROM snake ORDER BY score DESC;";
 
 $results = $conn->query($query);
 
