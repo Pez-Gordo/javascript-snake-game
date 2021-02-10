@@ -15,8 +15,8 @@ if (!$conn) {
     exit;
 }
 
-//echo "Connection successful! " . PHP_EOL;
-//echo "Info host: " . mysqli_get_host_info($conn) . PHP_EOL;
+echo "Connection successful! " . PHP_EOL;
+echo "Info host: " . mysqli_get_host_info($conn) . PHP_EOL;
 
 
 

@@ -478,7 +478,7 @@ function enviarDatos() {
     $(document).ready(function(){
 		$('#btnguardar').click(function(){
 			var datos=$('#floatingForm').serialize();
-            //console.log(datos)
+            console.log(datos)
             //alert("espera !!!!!!")
 			$.ajax({
 				type: "POST",
@@ -487,8 +487,8 @@ function enviarDatos() {
 				success: function(r){
                     alert("Added registry to database")
 					console.log(r)
-                    document.getElementById('floatingDiv').style.display = 'none'
-                    document.getElementById('resultDiv').style.display = 'block'
+                    //document.getElementById('floatingDiv').style.display = 'none'
+                    //document.getElementById('resultDiv').style.display = 'block'
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
             		console.log(textStatus, errorThrown);
