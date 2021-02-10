@@ -1,3 +1,8 @@
+<?php
+include_once './assets/php/consultar.php'
+?>
+
+<!Doctype html>
 <html>
     <head>
         <title>Let's SnAkE !!</title>
@@ -26,6 +31,27 @@
 		    <p></p>
 		    <button id="btnguardar">Send</button>
         </form>
+
+    </div>
+
+    <div id="resultDiv">
+        <h2>Snake Ranking</h2>
+        
+       <?php
+            $sql = "select * from snake order by score desc;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result); 
+
+            if ($resultCheck > 0) {    
+                echo "<table border='1'>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr><td>" . $row['usuario'] . "</td><td>" . $row['score'] . "</td><td>" . $row['say'] . "</td></tr>";
+                }
+            } 
+            echo "</table>";
+        ?>
+        
+        
 
     </div>
 

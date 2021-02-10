@@ -18,6 +18,11 @@ body {
   display: none;
 }
 
+#resultDiv {
+  float: left;
+  display: none;
+}
+
 h1 {
   padding-left: 0px;
   /*position: relative;*/
