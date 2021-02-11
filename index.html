@@ -14,11 +14,11 @@
     <div id="floatingDiv">
         <form method="POST" id="floatingForm">
             
-		    <label>Usuario</label>
+		    <label>Player: (Max: 12)</label>
 		    <p></p>
-		    <input type="text" name="usuario" id="usuario" maxlenght=12>
+		    <input type="text" name="usuario" id="usuario" maxlenght=12 pattern="{1,12}" required>
 		    <p></p>
-		    <label>Say something!!</label>
+		    <label>Say something!! (Max: 120)</label>
 		    <p></p>
 		    <input type="text" name="say" id="say" maxlength=120>
             <p></p>

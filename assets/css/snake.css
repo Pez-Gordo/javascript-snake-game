@@ -28,6 +28,10 @@ h1 {
   /*position: relative;*/
 }
 
+#tablaRanking {
+  background-color: green;
+}
+
 #spangreen {
   color: green;
 }

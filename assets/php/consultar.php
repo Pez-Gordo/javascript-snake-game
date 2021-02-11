@@ -12,11 +12,11 @@ $results = $conn->query($query);
 
 // Almacena en $resultCheck el número de filas de la consulta
 $resultCheck=mysqli_num_rows($results);
-
-print($resultCheck);
+// Imprime el numero de registros
+//print($resultCheck);
 
 if ($resultCheck > 0) {    
-    echo "<table border='1'>";
+    echo "<table border='1' id='tablaRanking'>";
     while ($row = mysqli_fetch_assoc($results)) {
         echo "<tr><td>" . $row['usuario'] . "</td><td>" . $row['score'] . "</td><td>" . $row['say'] . "</td></tr>";
     }
@@ -24,3 +24,5 @@ if ($resultCheck > 0) {
 } 
 
 mysqli_close($conn);
+
+?>
